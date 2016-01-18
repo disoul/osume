@@ -10,6 +10,7 @@ import React, {
   Text,
   View
 } from 'react-native';
+import UserSelector from './app/components/select-user';
 
 class osume extends Component {
   render() {
