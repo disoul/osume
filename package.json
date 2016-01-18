@@ -7,5 +7,9 @@
   },
   "dependencies": {
     "react-native": "^0.18.0-rc"
+  },
+  "devDependencies": {
+    "express": "^4.13.3",
+    "react-native-storage": "0.0.11"
   }
 }

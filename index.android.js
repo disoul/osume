@@ -10,12 +10,15 @@ import React, {
   Text,
   View
 } from 'react-native';
-import EntryScene from './app/scene/entry-scene';
+import UserPage from './app/scene/user-page';
+import storage from './app/storage/storage';
+
+global.storage = storage;
 
 class osume extends Component {
   render() {
     return (
-        <EntryScene />
+        <UserPage />
     );
   }
 }

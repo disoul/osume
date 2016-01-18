@@ -32,8 +32,8 @@ var storage = new Storage({
 storage.save({
   key: 'defaultUser',
   rawData: {
-    username: null,
-    id: null,
+    username: 'disoul',
+    id: 990618,
   },
   expires: null,
 });
