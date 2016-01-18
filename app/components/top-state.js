@@ -13,7 +13,7 @@ class TopState extends Component {
   constructor(props: any) {
     super(props);
     this.state = {
-      username: '',
+      username: 'null',
       rank: 9999999,
       id: null,
       country: null,
@@ -42,10 +42,10 @@ class TopState extends Component {
     }).then( ret => {
       console.log(ret);
       this.setState({
-        username: ret.username,
-        rank: ret.pp_rank,
+        username: ret[0].username,
+        rank: ret[0].pp_rank,
         id: userid,
-        country: ret.country,
+        country: ret[0].country,
       });
     }).catch( err => {
       console.warn(err);
@@ -68,11 +68,21 @@ class TopState extends Component {
 
   renderUserState() {
     return (
-      <View style={Styles.global.container_row}>
+      <View 
+          style={Styles.global.container_row, Styles.topState.container}>
         <Image
             source={{uri: 'https://a.ppy.sh/' + this.state.id}}
-            style={Styles.topState.avatar}
-        ></Image>
+            style={Styles.topState.avatar} 
+            resizeMode='cover' />
+        <View 
+            style={Styles.global.container_column, Styles.topState.leftView}>
+          <View style={Styles.global.container_row}>
+            <Text>{this.state.username}</Text>
+            <Image 
+                source={{uri:'https://s.ppy.sh/images/flags/' + this.state.country.toLowerCase() + '.gif'}}/>
+          </View>
+          <Text>{'#' + this.state.rank}</Text>
+        </View>
       </View>
     );
   }

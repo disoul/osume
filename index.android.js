@@ -12,13 +12,16 @@ import React, {
 } from 'react-native';
 import UserPage from './app/scene/user-page';
 import storage from './app/storage/storage';
+import Styles from './app/styles/index';
 
 global.storage = storage;
 
 class osume extends Component {
   render() {
     return (
-        <UserPage />
+      <View style={ Styles.global.container }>
+        <UserPage style={ Styles.global.container }/>
+      </View>
     );
   }
 }

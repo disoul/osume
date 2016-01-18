@@ -11,9 +11,7 @@ import Styles from '../styles/index';
 class UserPage extends Component {
   render() {
     return (
-      <View style={Styles.global.container}>
-        <TopState />
-      </View>
+      <TopState style={ Styles.global.container } />
     );
   }
 }
