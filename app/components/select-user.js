@@ -4,8 +4,10 @@ import React, {
   StyleSheet,
   Text,
   TextInput,
+  TouchableNativeFeedback,
   View,
 } from 'react-native';
+import Styles from '../styles/index'
 
 class UserSelector extends Component {
   constructor(props: any) {
@@ -17,32 +19,28 @@ class UserSelector extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}>
+      <View style={Styles.global.container_column}>
+        <Text>
           Input Username 
         </Text>
-        <TextInput 
-            style={styles.textInput} 
-            value={this.state.inputId}
-        />
+        <View style={Styles.global.container_row}>
+          <TextInput
+              style={Styles.userSelector.input}
+              value={this.state.inputId}
+              onChangeText={(text) => this.setState({inputId: text})}
+          />
+          <TouchableNativeFeedback
+              background={TouchableNativeFeedback.SelectableBackground()}
+              style={Styles.userSelector.buton}
+          >
+            <View style={Styles.global.container}>
+              <Text>Enter</Text>
+            </View>
+          </TouchableNativeFeedback>
+        </View>
       </View> 
     ); 
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 20,
-  },
-  textInput: {
-    width: 200,
-  },
-});
 
 module.exports = UserSelector;

@@ -15,7 +15,7 @@ import EntryScene from './app/scene/entry-scene';
 class osume extends Component {
   render() {
     return (
-      <EntryScene />
+        <EntryScene />
     );
   }
 }

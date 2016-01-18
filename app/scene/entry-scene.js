@@ -6,12 +6,12 @@ import React, {
   View
 } from 'react-native';
 import UserSelector from '../components/select-user';
-import Css from '../styles/index';
+import Styles from '../styles/index';
 
 class EntryScene extends Component {
   render() {
     return (
-      <View style={Css.global.container}>
+      <View style={Styles.global.container}>
         <UserSelector />
       </View>
     );

@@ -1,7 +1,9 @@
 import global from './global';
+import userSelector from './user-selector';
 
-var Css = {
+var Styles = {
   'global': global,
+  'userSelector': userSelector, 
 };
 
-module.exports = Css;
+module.exports = Styles;
