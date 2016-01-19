@@ -69,19 +69,25 @@ class TopState extends Component {
   renderUserState() {
     return (
       <View 
-          style={Styles.global.container_row, Styles.topState.container}>
-        <Image
-            source={{uri: 'https://a.ppy.sh/' + this.state.id}}
-            style={Styles.topState.avatar} 
-            resizeMode='cover' />
+          style={[Styles.global.container_row, Styles.topState.container]}>
+        <View
+            style={Styles.topState.avatar}>
+          <Image
+              style={Styles.topState.avatar_img}
+              source={{uri: 'https://a.ppy.sh/' + this.state.id}}
+              resizeMode='cover' />
+        </View>
         <View 
             style={Styles.global.container_column, Styles.topState.leftView}>
-          <View style={Styles.global.container_row}>
-            <Text>{this.state.username}</Text>
-            <Image 
+          <View style={[Styles.global.container_row,{justifyContent: 'flex-start',maxWidth: 1000}]}>
+            <Text style={Styles.topState.username}>
+              {this.state.username}
+            </Text>
+            <Image
+                style={Styles.topState.country} 
                 source={{uri:'https://s.ppy.sh/images/flags/' + this.state.country.toLowerCase() + '.gif'}}/>
           </View>
-          <Text>{'#' + this.state.rank}</Text>
+          <Text style={Styles.topState.rank}>{'#' + this.state.rank}</Text>
         </View>
       </View>
     );

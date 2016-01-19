@@ -19,9 +19,7 @@ global.storage = storage;
 class osume extends Component {
   render() {
     return (
-      <View style={ Styles.global.container }>
-        <UserPage style={ Styles.global.container }/>
-      </View>
+      <UserPage />
     );
   }
 }
