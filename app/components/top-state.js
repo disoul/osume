@@ -17,6 +17,7 @@ class TopState extends Component {
       rank: 9999999,
       id: null,
       country: null,
+      pp: 0,
     };
     //FIXME: use props from parent
   }
@@ -46,6 +47,7 @@ class TopState extends Component {
         rank: ret[0].pp_rank,
         id: userid,
         country: ret[0].country,
+        pp: ret[0].pp_raw,
       });
     }).catch( err => {
       console.warn(err);
@@ -79,15 +81,21 @@ class TopState extends Component {
         </View>
         <View 
             style={Styles.global.container_column, Styles.topState.leftView}>
-          <View style={[Styles.global.container_row,{justifyContent: 'flex-start',maxWidth: 1000}]}>
-            <Text style={Styles.topState.username}>
+          <View style={[Styles.global.container_row,Styles.topState.username_block]}>
+            <Text style={[Styles.topState.username,Styles.global.textShadow]}>
               {this.state.username}
             </Text>
             <Image
                 style={Styles.topState.country} 
-                source={{uri:'https://s.ppy.sh/images/flags/' + this.state.country.toLowerCase() + '.gif'}}/>
+                source={{uri:'https://new.ppy.sh/images/flags/' + this.state.country + '.png'}}
+                resizeMode='contain'/>
           </View>
-          <Text style={Styles.topState.rank}>{'#' + this.state.rank}</Text>
+          <View style={[Styles.global.container_row,Styles.topState.bottomColumn]}>
+            <Text style={[Styles.global.textShadow,Styles.topState.rank]}>{'#' + this.state.rank}</Text>
+            <Text style={[Styles.global.textShadow,Styles.topState.dateinfo]}>
+            {this.state.pp + 'pp'}
+            </Text>
+          </View>
         </View>
       </View>
     );

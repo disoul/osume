@@ -26,6 +26,14 @@ const global = StyleSheet.create({
     right: 0,
     top: 0,
     bottom: 0,
+  },
+  textShadow: {
+    textShadowOffset: {
+      width: 1,
+      height: 1,
+    },
+    textShadowRadius: 10,
+    textShadowColor: "rgba(0, 0, 0, 0.7)",
   }
 });
 
