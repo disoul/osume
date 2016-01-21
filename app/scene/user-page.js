@@ -16,7 +16,7 @@ class UserPage extends Component {
     return (
         <View style={[ Styles.global.container, Styles.global.fill]}>
           <TopState />
-          <UserTab style={[ Styles.global.container,Styles.global.fill ]} />
+          <UserTab style={[ Styles.global.container,Styles.global.fill,{elevation: 4}]} />
         </View>
     );
   }

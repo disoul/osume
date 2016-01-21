@@ -24,30 +24,33 @@ class UserTab extends Component {
   render() {
     return (
       <View style={Styles.global.container}>
-        <TabLayout
-          selectedTab={ this.state.pagePosition }
-          textColor="#ffffff"
-          onTabSelected={(e) => {
-            const pagePosition = e.nativeEvent.position;
-            this.setState({ 'pagePosition': pagePosition });
-            this.viewPager.setPage(pagePosition);
-          }}
-          selectedTabIndicatorColor= "#64b5f6"
+        <View
           style={Styles.userTab.tabLayout}
         >
-          <Tab 
-            name="State"
-            textColor="#ffffff"
-          />
-          <Tab 
-            name="BP" 
-            textColor="#ffffff"
-          />
-          <Tab 
-            name="Events" 
-            textColor="#ffffff"
-          />
-        </TabLayout>
+          <TabLayout
+            selectedTab={ this.state.pagePosition }
+            onTabSelected={(e) => {
+              const pagePosition = e.nativeEvent.position;
+              this.setState({ 'pagePosition': pagePosition });
+              this.viewPager.setPage(pagePosition);
+            }}
+            selectedTabIndicatorColor= "#64b5f6"
+            style={{height: 35}}
+          >
+            <Tab 
+              name="State"
+              textColor="#ffffff"
+            />
+            <Tab 
+              name="BP" 
+              textColor="#ffffff"
+            />
+            <Tab 
+              name="Events" 
+              textColor="#ffffff"
+            />
+          </TabLayout>
+        </View>
         <ViewPagerAndroid
           style={ {flex: 1} }
           ref={viewPager => { this.viewPager = viewPager; }}
