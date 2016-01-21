@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native';
 const global = StyleSheet.create({ 
   container: {
     flex: 1,
+    flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'stretch',
     backgroundColor: '#F5FCFF',

@@ -3,3 +3,7 @@ rootProject.name = 'osume'
 include ':app'
 include ':react-native-android-statusbar'
 project(':react-native-android-statusbar').projectDir = new File(settingsDir, '../node_modules/react-native-android-statusbar')
+
+
+include ':react-native-android-tablayout'
+project(':react-native-android-tablayout').projectDir = new File('../node_modules/react-native-android-tablayout/android')

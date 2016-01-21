@@ -9,7 +9,6 @@ const topState = StyleSheet.create({
     //FIXME: use flex
     justifyContent: 'flex-start',
     backgroundColor: BackgroundColor,
-    elevation: 4,
   },
   avatar: {
     width: 80,
