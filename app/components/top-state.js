@@ -23,15 +23,19 @@ class TopState extends Component {
   }
 
   componentDidMount() {
-    global.storage.load({
-      key: 'defaultUser'  
-    }).then( ret => {
-      console.log('233');
-      if (ret.id !== null){
-        this.fetchDefaultUser(ret.id);
-        console.log('233333');
-      }
-    });
+    if (this.props.userid) {
+      this.fetchDefaultUser(this.props.userid); 
+    } else {
+      global.storage.load({
+        key: 'defaultUser'  
+      }).then( ret => {
+        console.log('233');
+        if (ret.id !== null){
+          this.fetchDefaultUser(ret.id);
+          console.log('233333');
+        }
+      });
+    }
   }
 
   fetchDefaultUser(userid) {

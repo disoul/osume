@@ -15,8 +15,8 @@ class UserPage extends Component {
     StatusBarAndroid.setHexColor('#c2185b');
     return (
         <View style={[ Styles.global.container, Styles.global.fill]}>
-          <TopState />
-          <UserTab style={[ Styles.global.container,Styles.global.fill,{elevation: 4}]} />
+          <TopState userid={this.props.userid}/>
+          <UserTab userid={this.props.userid} style={[ Styles.global.container,Styles.global.fill,{elevation: 4}]} />
         </View>
     );
   }

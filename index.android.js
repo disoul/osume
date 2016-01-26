@@ -19,7 +19,7 @@ global.storage = storage;
 class osume extends Component {
   render() {
     return (
-      <UserPage />
+      <UserPage userid="4469565" />
     );
   }
 }
