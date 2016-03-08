@@ -8,6 +8,7 @@ import React, {
 } from 'react-native';
 import Styles from '../styles/index';
 import { Tab, TabLayout } from 'react-native-android-tablayout';
+import StateDetail from './state-detail';
 
 class UserTab extends Component {
   constructor(props: any) {
@@ -39,7 +40,8 @@ class UserTab extends Component {
           >
             <Tab 
               name="State"
-              textColor="#ffffff"
+              textColor="#ffffffasda"
+              iconResId="2131223"
             />
             <Tab 
               name="BP" 
@@ -60,7 +62,7 @@ class UserTab extends Component {
             this.viewPager.setPage(pagePosition);
           } }>
           <View>
-            <Text>Tab 1 content</Text>
+            <StateDetail userid={this.props.userid} />
           </View>
           <View>
             <Text>Tab 2 content</Text>

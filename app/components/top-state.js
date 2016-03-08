@@ -19,7 +19,6 @@ class TopState extends Component {
       country: null,
       pp: 0,
     };
-    //FIXME: use props from parent
   }
 
   componentDidMount() {
@@ -29,10 +28,8 @@ class TopState extends Component {
       global.storage.load({
         key: 'defaultUser'  
       }).then( ret => {
-        console.log('233');
         if (ret.id !== null){
           this.fetchDefaultUser(ret.id);
-          console.log('233333');
         }
       });
     }
@@ -69,7 +66,7 @@ class TopState extends Component {
 
   renderBlank() {
     //TODO
-    return (<View></View>);
+    return (<View><Text>Loading..</Text></View>);
   }
 
   renderUserState() {
